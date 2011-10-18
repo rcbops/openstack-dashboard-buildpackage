@@ -1,0 +1,10 @@
+To install:
+
+enable mod_rewrite:
+
+a2enmod rewrite
+
+get rid of the default site and replace it with dash:
+
+a2dissite default
+a2ensite dash

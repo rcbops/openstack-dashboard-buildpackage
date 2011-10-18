@@ -1,0 +1,29 @@
+openstack-dashboard (2011.3-d5-rcb3) maverick; urgency=low
+
+  * Add dependency for django-openstack
+
+ -- RCB Builder <rcb-deploy@lists.rackspace.com>  Wed, 28 Sep 2011 14:30:35 -0500
+
+openstack-dashboard (2011.3-d5-rcb2) natty; urgency=low
+
+  * add sites-available template
+  * add README.Debian
+
+ -- RCB Builder <rcb-deploy@lists.rackspace.com>  Tue, 20 Sep 2011 14:32:48 -0500
+
+openstack-dashboard (2011.3-d5-rcb1) natty; urgency=low
+
+  * Updated upstream source from
+    https://github.com/cloudbuilders/openstack-dashboard.git, revision
+    76429135c9e2e67f020b5819c4104323abd4b788 Updated debian packaging
+    from https://github.com/rpedde/debians.git, revision
+    b4139ce7ad1e67e52605d4ff92204b1246f9b23c
+
+ -- root <build@syn-n04.lab>  Tue, 13 Sep 2011 23:40:17 -0500
+
+openstack-dashboard (000-000-0000) maverick; urgency=low
+
+  * Initial Commit
+
+ -- root <root@packaging>  Tue, 19 Jul 2011 22:21:31 +0000
+
