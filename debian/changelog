@@ -1,4 +1,4 @@
-openstack-dashboard (2011.3-d5-rcb3.1) maverick; urgency=low
+openstack-dashboard (2011.3-d5-rcb4) maverick; urgency=low
 
   * Add x-rcb-component in preparation for essex-e0 drop
 
