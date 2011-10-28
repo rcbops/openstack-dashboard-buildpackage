@@ -1,3 +1,9 @@
+openstack-dashboard (2011.3-d5-rcb3.1) maverick; urgency=low
+
+  * Add x-rcb-component in preparation for essex-e0 drop
+
+ -- RCB Builder <rcb-deploy@lists.rackspace.com>  Fri, 28 Oct 2011 09:37:55 -0500
+
 openstack-dashboard (2011.3-d5-rcb3) maverick; urgency=low
 
   * Add dependency for django-openstack
