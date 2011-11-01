@@ -3,7 +3,7 @@ $(function(){
 
   // show+hide image details
   $(".details").hide()
-  $("#images td").click(function(e){
+  $("#images td:not(#actions)").click(function(e){
     $(this).parent().nextUntil(".even, .odd").fadeToggle("slow");
   })
 
@@ -48,4 +48,9 @@ $(function(){
 
   // Fancy multi-selects
   $(".chzn-select").chosen()
+    
+  $(".detach").click(function(e){
+    var response = confirm('Are you sure you want to detach the '+$(this).attr('title')+" ?");
+    return response;
+  })
 })
