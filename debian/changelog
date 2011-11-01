@@ -1,3 +1,10 @@
+openstack-dashboard (2011.3-final-rcb1) maverick; urgency=low
+
+  * import github.com/cloudbuilders/openstack-dashboard revision
+    90f51fc78b7a84c1f77deb81f31d5e86a9b6d29c
+
+ -- RCB Builder <rcb-deploy@lists.rackspace.com>  Tue, 01 Nov 2011 15:36:03 -0500
+
 openstack-dashboard (2011.3-d5-rcb4) maverick; urgency=low
 
   * Add x-rcb-component in preparation for essex-e0 drop
@@ -25,11 +32,5 @@ openstack-dashboard (2011.3-d5-rcb1) natty; urgency=low
     from https://github.com/rpedde/debians.git, revision
     b4139ce7ad1e67e52605d4ff92204b1246f9b23c
 
- -- root <build@syn-n04.lab>  Tue, 13 Sep 2011 23:40:17 -0500
-
-openstack-dashboard (000-000-0000) maverick; urgency=low
-
-  * Initial Commit
-
- -- root <root@packaging>  Tue, 19 Jul 2011 22:21:31 +0000
+ -- RCB Builder <rcb-deploy@lists.rackspace.com>  Tue, 13 Sep 2011 23:40:17 -0500
 
