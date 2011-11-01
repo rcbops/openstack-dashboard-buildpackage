@@ -4,7 +4,7 @@
 # Administrator of the National Aeronautics and Space Administration.
 # All Rights Reserved.
 #
-# Copyright 2011 Fourth Paradigm Development, Inc.
+# Copyright 2011 Nebula, Inc.
 #
 #    Licensed under the Apache License, Version 2.0 (the "License"); you may
 #    not use this file except in compliance with the License. You may obtain
@@ -37,9 +37,11 @@ ENABLE_VNC = True
 LOGIN_URL = '/auth/login'
 LOGIN_REDIRECT_URL = '/'
 
-MEDIA_ROOT = os.path.join(ROOT_PATH, '..', 'media')
+MEDIA_ROOT = os.path.abspath(os.path.join(ROOT_PATH, '..', 'media'))
 MEDIA_URL = '/media/'
-ADMIN_MEDIA_PREFIX = '/media/admin/'
+STATIC_ROOT = os.path.abspath(os.path.join(ROOT_PATH, '..', 'static'))
+STATIC_URL = '/static/'
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 CREDENTIAL_AUTHORIZATION_DAYS = '5'
 
@@ -61,9 +63,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.core.context_processors.request',
     'django.core.context_processors.media',
+    'django.core.context_processors.static',
     'django.contrib.messages.context_processors.messages',
     'django_openstack.context_processors.swift',
     'django_openstack.context_processors.tenants',
+    'django_openstack.context_processors.quantum',
 )
 
 TEMPLATE_LOADERS = (
@@ -75,11 +79,16 @@ TEMPLATE_DIRS = (
     os.path.join(ROOT_PATH, 'templates'),
 )
 
+STATICFILES_DIRS = (
+    os.path.join(ROOT_PATH, 'static'),
+)
+
 INSTALLED_APPS = (
     'dashboard',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
     'django_openstack',
     'django_openstack.templatetags',
     'mailer',
@@ -122,8 +131,9 @@ if DEBUG:
         import debug_toolbar
 
         INSTALLED_APPS += ('debug_toolbar',)
-        MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+        MIDDLEWARE_CLASSES += (
+                'debug_toolbar.middleware.DebugToolbarMiddleware',)
     except ImportError:
         logging.info('Running in debug mode without debug_toolbar.')
 
-OPENSTACK_KEYSTONE_DEFAULT_ROLE='Member'
+OPENSTACK_KEYSTONE_DEFAULT_ROLE = 'Member'
