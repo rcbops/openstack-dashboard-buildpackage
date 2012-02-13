@@ -19,37 +19,34 @@
 #    under the License.
 
 import os
-import shutil
-import setuptools
+from setuptools import setup, find_packages, findall
+from horizon import version
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-
-dst = 'debian/openstack-dashboard/var/lib/dash'
-os.system('rm -rf %s' % dst)
-shutil.copytree('tools', '%s/tools' % dst)
-shutil.copytree('dashboard', '%s/dashboard' % dst)
-shutil.copytree('local', '%s/local' % dst)
-
-
-setuptools.setup(
-    name = 'openstack-dashboard',
-    version = '0.4',
-    url = 'https://github.com/cloudbuilders/openstack-dashboard.git',
+setup(
+    name = "horizon",
+    version = version.canonical_version_string(),
+    url = 'https://github.com/openstack/horizon/',
     license = 'Apache 2.0',
     description = "A Django interface for OpenStack.",
     long_description = read('README'),
     author = 'Devin Carlen',
     author_email = 'devin.carlen@gmail.com',
-    data_files = [],
-    install_requires = ['setuptools', 'mox>=0.5.0'],
-    zip_safe = False,
+    packages = find_packages(),
+    package_data = {'horizon':
+                        [s[len('horizon/'):] for s in
+                         findall('horizon/templates') \
+                             + findall('horizon/dashboards/nova/templates') \
+                             + findall('horizon/dashboards/syspanel/templates') \
+                             + findall('horizon/dashboards/settings/templates')]},
+    install_requires = ['setuptools', 'mox>=0.5.3', 'django_nose'],
     classifiers = [
         'Development Status :: 4 - Beta',
         'Framework :: Django',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache License',
+        'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Internet :: WWW/HTTP',
