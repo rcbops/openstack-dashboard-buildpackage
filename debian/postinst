@@ -4,9 +4,7 @@ set -e
 
 case "$1" in
     configure)
-	pushd /var/lib/dash > /dev/null 1>&1
-	dashboard/manage.py syncdb > /dev/null 2>&1
-	popd > /dev/null 2>&1
+	(cd /var/lib/dash && PYTHONPATH=/var/lib/dash python dashboard/manage.py syncdb) > /dev/null 2>&1
 
 	# set permissions
 	for i in $(find /var/lib/dash/local); do
