@@ -29,7 +29,7 @@ dst = 'debian/openstack-dashboard/var/lib/dash'
 os.system('rm -rf %s' % dst)
 shutil.copytree('dashboard', '%s/dashboard' % dst)
 shutil.copytree('local', '%s/local' % dst)
-shutil.copyfile('mange.py', '%s/local' % dst)
+shutil.copyfile('manage.py', '%s/local' % dst)
 
 setuptools.setup(
     name = 'openstack-dashboard',
