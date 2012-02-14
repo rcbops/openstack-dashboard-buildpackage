@@ -1,6 +1,6 @@
 PYTHON=`which python`
 DESTDIR=/
-PROJECT=horizon
+PROJECT=openstack-dashboard
 
 all:
 	@echo "make test - Run tests"
@@ -20,5 +20,6 @@ buildrpm:
 
 clean:
 	$(PYTHON) setup.py clean
+	$(MAKE) -f $(CURDIR)/debian/rules clean
 	rm -rf build/ MANIFEST
 	find . -name '*.pyc' -delete
