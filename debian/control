@@ -11,5 +11,5 @@ Package: openstack-dashboard
 Architecture: all
 Homepage: https://github.com/cloudbuilders/openstack-dashboard
 XB-Python-Version: ${python:Versions}
-Depends: ${misc:Depends}, ${python:Depends}, adduser, python-lxml, python-pysqlite2, sqlite3, libapache2-mod-wsgi
+Depends: ${misc:Depends}, ${python:Depends}, adduser, python-lxml, python-pysqlite2, sqlite3, libapache2-mod-wsgi, python-django
 Description: Openstack Dashboard Implementation
