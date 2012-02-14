@@ -19,29 +19,25 @@
 #    under the License.
 
 import os
-from setuptools import setup, find_packages, findall
-from horizon import version
+import shutil
+import setuptools
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-setup(
-    name = "horizon",
-    version = version.canonical_version_string(),
-    url = 'https://github.com/openstack/horizon/',
+
+setuptools.setup(
+    name = 'openstack-dashboard',
+    version = '0.4',
+    url = 'https://github.com/cloudbuilders/openstack-dashboard.git',
     license = 'Apache 2.0',
     description = "A Django interface for OpenStack.",
     long_description = read('README'),
     author = 'Devin Carlen',
     author_email = 'devin.carlen@gmail.com',
-    packages = find_packages(),
-    package_data = {'horizon':
-                        [s[len('horizon/'):] for s in
-                         findall('horizon/templates') \
-                             + findall('horizon/dashboards/nova/templates') \
-                             + findall('horizon/dashboards/syspanel/templates') \
-                             + findall('horizon/dashboards/settings/templates')]},
-    install_requires = ['setuptools', 'mox>=0.5.3', 'django_nose'],
+    data_files = [],
+    install_requires = ['setuptools', 'mox>=0.5.0'],
+    zip_safe = False,
     classifiers = [
         'Development Status :: 4 - Beta',
         'Framework :: Django',
