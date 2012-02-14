@@ -1,0 +1,11 @@
+--- a/dashboard/settings.py
++++ b/dashboard/settings.py
+@@ -86,7 +86,7 @@
+     'dashboard',
+     'django.contrib.sessions',
+     'django.contrib.messages',
+-    'django.contrib.staticfiles',
++#    'django.contrib.staticfiles',
+     'django_nose',
+     'horizon',
+     'horizon.dashboards.nova',

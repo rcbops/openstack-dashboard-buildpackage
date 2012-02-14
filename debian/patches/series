@@ -1,1 +1,3 @@
+remove-static-files-dep.patch
+remove-django-nose-dep.patch
 remove-openstackx-dep.patch

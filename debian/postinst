@@ -1,0 +1,29 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    configure)
+	pushd /var/lib/dash > /dev/null 1>&1
+	dashboard/manage.py syncdb > /dev/null 2>&1
+	popd > /dev/null 2>&1
+
+	# set permissions
+	for i in $(find /var/lib/dash/local); do
+	    if ! dpkg-statoverride --list ${1} > /dev/null 2>&1; then
+		dpkg-statoverride --update --add www-data www-data 640 ${i}
+	    fi
+	done
+	;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+	;;
+
+    *)
+	echo "postinst called with unknown argument \`$1'" >&2
+	exit 0
+	;;
+esac
+
+#DEBHELPER#
+
