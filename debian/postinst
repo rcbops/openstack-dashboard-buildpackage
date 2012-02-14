@@ -7,7 +7,7 @@ case "$1" in
 	(cd /var/lib/dash && PYTHONPATH=/var/lib/dash python dashboard/manage.py syncdb) > /dev/null 2>&1
 
 	# set permissions
-	for i in $(find /var/lib/dash/local); do
+	for i in $(find /var/lib/dash/local -type f); do
 	    if ! dpkg-statoverride --list ${1} > /dev/null 2>&1; then
 		dpkg-statoverride --update --add www-data www-data 640 ${i}
 	    fi
