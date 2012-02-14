@@ -1,0 +1,47 @@
+diff --git a/dashboard/middleware.py b/dashboard/middleware.py
+index 6a8772f..6339080 100644
+--- a/dashboard/middleware.py
++++ b/dashboard/middleware.py
+@@ -22,7 +22,7 @@ import logging
+
+ from django import shortcuts
+ from django.contrib import messages
+-from openstackx.api import exceptions as api_exceptions
++from novaclient import exceptions as novaclient_exceptions
+
+
+ LOG = logging.getLogger('openstack_dashboard')
+@@ -30,7 +30,7 @@ LOG = logging.getLogger('openstack_dashboard')
+
+ class DashboardLogUnhandledExceptionsMiddleware(object):
+     def process_exception(self, request, exception):
+-        if isinstance(exception, api_exceptions.NotFound):
++        if isinstance(exception, novaclient_exceptions.Unauthorized):
+             try:
+                 exception.message.index('reauthenticate')
+                 # clear the errors
+diff --git a/dashboard/static/dashboard/css/style.css b/dashboard/static/dashboard/css/style.css
+index 50d159c..d28fa65 100644
+--- a/dashboard/static/dashboard/css/style.css
++++ b/dashboard/static/dashboard/css/style.css
+@@ -546,6 +546,7 @@ table form {
+   min-width: 735px;
+   padding: 5px 0 5px 0;
+   border: 1px solid #e6e6e6;
++  clear: both;
+ }
+
+ #activity.tenant { margin: 0 0 0 0; }
+@@ -951,3 +952,11 @@ form div.clearfix.error {
+   border: 1px solid #e1e1e1;
+   padding: 5px;
+ }
++#date_form {
++  width: 100%;
++  float: left;
++}
++#date_form select, #date_form input {
++  float: left;
++  margin-right: 10px;
++}
+\ No newline at end of file
