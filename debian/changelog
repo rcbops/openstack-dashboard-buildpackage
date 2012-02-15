@@ -1,3 +1,9 @@
+openstack-dashboard (2012.0+e3-rcb3) maverick; urgency=low
+
+  * add runtime dep on python-mox.  this is something of a fail
+
+ -- RCB Builder <rcb-deploy@lists.rackspace.com>  Wed, 15 Feb 2012 13:46:37 -0600
+
 openstack-dashboard (2012.0+e3-rcb2) maverick; urgency=low
 
   * add cherry-picked patch c0a3d85d3b0532de08799b02b9e7cf797804fb6e to
