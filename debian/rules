@@ -10,3 +10,5 @@ clean::
 	rm -rf build build-stamp configure-stamp build/ MANIFEST
 	dh_clean
 
+override_dh_install:
+	./setup.py
