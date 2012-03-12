@@ -1,1 +1,2 @@
 debian/dash etc/apache2/sites-available
+var/lib/dash
