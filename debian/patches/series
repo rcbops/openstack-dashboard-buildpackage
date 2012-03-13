@@ -1,3 +1,4 @@
+fix-local-settings.patch
 fix-setup.patch
 remove-static-files-dep.patch
 remove-django-nose-dep.patch

@@ -1,3 +1,9 @@
+openstack-dashboard (2012.0+e3-rcb4) maverick; urgency=low
+
+  * make the local settings a little more sane
+
+ -- RCB Builder <rcb-deploy@lists.rackspace.com>  Mon, 12 Mar 2012 17:01:22 -0700
+
 openstack-dashboard (2012.0+e3-rcb3) maverick; urgency=low
 
   * add runtime dep on python-mox.  this is something of a fail

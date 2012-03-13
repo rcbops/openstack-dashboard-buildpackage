@@ -1,0 +1,21 @@
+--- a/local/local_settings.py.example
++++ b/local/local_settings.py.example
+@@ -17,7 +17,8 @@
+ # We recommend you use memcached for development; otherwise after every reload
+ # of the django development server, you will have to login again. To use
+ # memcached set CACHE_BACKED to something like 'memcached://127.0.0.1:11211/'
+-CACHE_BACKEND = 'locmem://'
++CACHE_BACKEND = 'dummy://'
++SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+ 
+ # Send email to the console by default
+ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+@@ -56,7 +57,7 @@
+ API_RESULT_LIMIT = 1000
+ 
+ # Configure quantum connection details for networking
+-QUANTUM_ENABLED = True
++QUANTUM_ENABLED = False
+ QUANTUM_URL = '%s'  % OPENSTACK_HOST
+ QUANTUM_PORT = '9696'
+ QUANTUM_TENANT = '1234'
