@@ -1,3 +1,9 @@
+openstack-dashboard (2012.0+e3-rcb5) maverick; urgency=low
+
+  * more debhelper like
+
+ -- RCB Builder <rcb-deploy@lists.rackspace.com>  Sat, 17 Mar 2012 15:44:43 -0700
+
 openstack-dashboard (2012.0+e3-rcb4) maverick; urgency=low
 
   * make the local settings a little more sane

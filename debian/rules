@@ -11,7 +11,3 @@ DEB_PYTHON_SYSTEM := pysupport
 
 override_dh_auto_clean:
 
-override_dh_install:
-	# pwd
-	# ls -lR debian
-	# python ./setup.py
