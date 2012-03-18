@@ -1,5 +1,6 @@
 debian/dash etc/apache2/sites-available
 dashboard/* var/lib/dash/dashboard
 local/* var/lib/dash/local
-manage.py var/lib/dash/local
+manage.py var/lib/dash/dashboard
+
 
